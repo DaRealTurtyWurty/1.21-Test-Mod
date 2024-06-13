@@ -3,7 +3,7 @@
 	"package": "dev.turtywurty.testmod.mixin.client",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
-      "dev.turtywurty.testmod.client.ExampleClientMixin"
+      "ExampleClientMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
