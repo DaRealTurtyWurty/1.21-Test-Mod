@@ -1,6 +1,8 @@
 package dev.turtywurty.testmod;
 
+import dev.turtywurty.testmod.init.ItemInit;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,6 +19,11 @@ public class TestMod implements ModInitializer {
         // However, some things (like resources) may still be uninitialized.
         // Proceed with mild caution.
 
+        ItemInit.init();
         LOGGER.info("Hello Fabric world!");
+    }
+
+    public static Identifier id(String path) {
+        return Identifier.of(MOD_ID, path);
     }
 }
