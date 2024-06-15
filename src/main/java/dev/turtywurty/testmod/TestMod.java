@@ -1,5 +1,6 @@
 package dev.turtywurty.testmod;
 
+import dev.turtywurty.testmod.init.BlockInit;
 import dev.turtywurty.testmod.init.ItemInit;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
@@ -20,6 +21,7 @@ public class TestMod implements ModInitializer {
         // Proceed with mild caution.
 
         ItemInit.init();
+        BlockInit.init();
         LOGGER.info("Hello Fabric world!");
     }
 
