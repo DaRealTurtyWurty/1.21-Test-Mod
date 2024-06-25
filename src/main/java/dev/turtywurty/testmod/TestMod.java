@@ -1,8 +1,12 @@
 package dev.turtywurty.testmod;
 
 import dev.turtywurty.testmod.init.BlockInit;
+import dev.turtywurty.testmod.init.ItemGroupInit;
 import dev.turtywurty.testmod.init.ItemInit;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +26,12 @@ public class TestMod implements ModInitializer {
 
         ItemInit.init();
         BlockInit.init();
+        ItemGroupInit.load();
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
+            entries.addAfter(Items.PUMPKIN_PIE, ItemInit.TEST_FOOD);
+        });
+
         LOGGER.info("Hello Fabric world!");
     }
 
